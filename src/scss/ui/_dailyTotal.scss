@@ -1,0 +1,32 @@
+@use '../bases/variables' as v; 
+@use '../bases/mixins' as m;
+
+.dailyTotal {
+    border: 1px solid v.$blanco;
+    padding: 2rem;
+
+    .dailytotal__heading {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    
+    .dailyTotal__user {
+        border-bottom: 1px solid v.$blanco;
+        display: flex;
+        justify-content: space-between;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+
+    .dailyTotal__total {
+        text-align: center;
+    }
+
+    .dailyTotal__price {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}

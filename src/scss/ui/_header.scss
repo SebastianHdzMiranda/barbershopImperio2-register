@@ -119,7 +119,7 @@
     &--activo {
 
         border-top: 2px solid v.$blanco;
-        height: 15rem;
+        height: 20rem;
 
         @include m.tablet {
             height: unset;

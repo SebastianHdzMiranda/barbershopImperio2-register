@@ -32,12 +32,12 @@ export async function addSale(data) {
 
 }
 
-export async function addHorario(data) {
+export async function addAttendance(data) {
     const { nombre, access, fecha, hora } = data;
 
     try {
         const respuesta = await store
-        .append(access.toLowerCase(), [
+        .append(`asistencia-${access.toLowerCase()}`, [
             {
                 'Nombre': nombre,
                 'Fecha' : fecha,
@@ -50,6 +50,27 @@ export async function addHorario(data) {
         return error;   
     }
 }
+
+export async function addLunchTime(data) {
+    const { nombre, access, fecha, hora } = data;
+
+    try {
+        const respuesta = await store
+        .append(`comida-${access.toLowerCase()}`, [
+            {
+                'Nombre': nombre,
+                'Fecha' : fecha,
+                [access] : hora,
+            }
+        ]);
+        return respuesta;
+        
+    } catch (error) {
+        return error;   
+    }
+}
+
+
 
 export async function readSale() {   
     

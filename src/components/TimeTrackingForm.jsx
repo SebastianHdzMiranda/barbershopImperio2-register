@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { users } from '../data/db'
 import Alert from './Alert';
 import { formatDate, formatTime } from '../helpers';
-import { addHorario } from '../services/api';
+// import { addAttendance } from '../services/api';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
-function RegisterDay() {
+function TimeTrackingForm({title, functionApi}) {
 
   const [nombre, setNombre]  = useState('');
   const [access, setAccess] = useState('');
@@ -39,7 +39,7 @@ function RegisterDay() {
       preConfirm: async() => {
 
         try {
-          const result = await addHorario(data); 
+          const result = await functionApi(data);
           if (Object.keys(result)[0] === 'error') {
               throw new Error('No se enviaron los datos');
           } else {
@@ -52,26 +52,24 @@ function RegisterDay() {
           `);
         }
       }          
-    });
+  });
+  if (resultado.isConfirmed) {            
+      const alertSuccess = Swal.fire({
+          title: "Enviado!",
+          text: "Se enviaron los datos correctamente.",
+          icon: "success",
+          confirmButtonText: 'Ok'
+      });
 
-
-    if (resultado.isConfirmed) {
-        const alertSuccess = Swal.fire({
-            title: "Enviado!",
-            text: "Se enviaron los datos correctamente.",
-            icon: "success",
-            confirmButtonText: 'Ok'
-        });
-
-        if ((await alertSuccess).isConfirmed || (await alertSuccess).dismiss) {
-          navigate('/');
-        }
-    }
+      if ((await alertSuccess).isConfirmed || (await alertSuccess).dismiss) {
+        navigate('/');
+      }
+  }
   }
 
   return (
     <form onSubmit={handleSubmit} className='formulario'>
-      <legend className='formulario__legend'>Registro de entrada y salida</legend>
+      <legend className='formulario__legend'>{title}</legend>
       <div>
         <label className='formulario__heading' htmlFor="nombre">Digita tu nombre</label>
         <select name="nombre" id="nombre" className='formulario__select' value={nombre} onChange={e => setNombre(e.target.value)}>
@@ -100,4 +98,4 @@ function RegisterDay() {
   )
 }
 
-export default RegisterDay
+export default TimeTrackingForm

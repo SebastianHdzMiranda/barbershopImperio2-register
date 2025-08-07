@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const servicios = [
     {id:uuidv4(), img: 'adulto', sale:'Corte Adulto', price: 120}, 
+    {id:uuidv4(), img: 'adulto', sale:'$100 (1x1)', price: 100}, 
     {id:uuidv4(), img: 'niho', sale:'Corte Niño', price: 100},
     {id:uuidv4(), img: 'barba', sale:'Barba', price: 70},
     {id:uuidv4(), img: 'bigote', sale:'Bigote', price: 50},

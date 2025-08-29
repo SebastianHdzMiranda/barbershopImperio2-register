@@ -28,7 +28,7 @@ export const servicios = [
     {id:uuidv4(), img: 'complemento', sale:'Complemento 4', price: 50},
     {id:uuidv4(), img: 'complemento', sale:'Complemento 5', price: 80},
     {id:uuidv4(), img: 'club', sale:'Club (prim)', price: 80},
-    {id:uuidv4(), img: 'club', sale:'Club (sec)', price: 90},
+    {id:uuidv4(), img: 'club', sale:'Club (sec)', price: 100},
 
 ];
 

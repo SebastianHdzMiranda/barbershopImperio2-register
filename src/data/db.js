@@ -39,6 +39,8 @@ export const productos = [
     {id:uuidv4(), img: 'barbiux', sale: 'Barbiux', price: 190},
     {id:uuidv4(), img: 'nishmanP0', sale: 'Nishman p0', price: 240},
     {id:uuidv4(), img: 'off-road', sale: 'Off Road Pomada', price: 100},
+    {id:uuidv4(), img: 'cologne', sale: 'Cologne', price: 260},
+    {id:uuidv4(), img: 'qperro-wey', sale: 'Q-Perro Wey', price: 120},
 ]
 
 export const users = [

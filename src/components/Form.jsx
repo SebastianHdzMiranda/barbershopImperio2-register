@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { pagos, productos, servicios, users } from '../data/db';
 import useForm from '../hooks/useForm';
 import Alert from './Alert';
@@ -7,6 +8,7 @@ function Form() {
     const {
         nombre,
         pago,
+        idCliente,
         cells,
         changeDisplay,
         alert,
@@ -16,6 +18,7 @@ function Form() {
         sigPag,
         guardarNombre,
         guardarPago,
+        guardarIdCliente,
         handleSubmit,
         handleChangeDisplay,
     } = useForm();
@@ -87,6 +90,8 @@ function Form() {
                             </>
                         }
 
+                        <label className='formulario__heading' htmlFor="id-cliente">Digita ID de cliente</label>
+                        <input type="number" name="id-cliente" id="id-cliente" className='formulario__select' value={idCliente || ''} onChange={guardarIdCliente}/>
 
                     </div>
                 }

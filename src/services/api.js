@@ -6,7 +6,7 @@ const store = new SteinStore(
 );
 
 export async function addSale(data) {
-    const { id, img, sale, price, nombre, fecha, hora, pago } = data;
+const { id, img, sale, price, nombre, fecha, hora, pago, idCliente } = data;
 
     try {
         const respuesta = await     store
@@ -19,7 +19,8 @@ export async function addSale(data) {
                 'Hora': hora,
                 'Imagen': img,
                 'Pago': pago,
-                'Id': id
+                'Id': id,
+                'IdCliente': idCliente
             }
         ]);
         return respuesta;

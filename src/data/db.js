@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export const servicios = [
-    {id:uuidv4(), img: 'adulto', sale:'Corte Adulto', price: 120}, 
+    {id:uuidv4(), img: 'adulto', sale:'Corte Adulto', price: 140}, 
     {id:uuidv4(), img: 'adulto', sale:'$100 (1x1)', price: 100}, 
-    {id:uuidv4(), img: 'niho', sale:'Corte Niño', price: 100},
+    {id:uuidv4(), img: 'niho', sale:'Corte Niño', price: 120},
     {id:uuidv4(), img: 'barba', sale:'Barba', price: 70},
     {id:uuidv4(), img: 'bigote', sale:'Bigote', price: 50},
     {id:uuidv4(), img: 'adultoCD', sale:'Corte Adulto C/D', price: 160},
@@ -41,6 +41,8 @@ export const productos = [
     {id:uuidv4(), img: 'off-road', sale: 'Off Road Pomada', price: 100},
     {id:uuidv4(), img: 'cologne', sale: 'Cologne', price: 260},
     {id:uuidv4(), img: 'qperro-wey', sale: 'Q-Perro Wey', price: 120},
+    {id:uuidv4(), img: 'level3-forming', sale: 'Level 3 Forming Cream', price: 180},
+    {id:uuidv4(), img: 'level3-spider', sale: 'Level 3 Spider Wax', price: 200},
 ]
 
 export const users = [
